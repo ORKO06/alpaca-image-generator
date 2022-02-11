@@ -1,5 +1,5 @@
 import { toPng } from "html-to-image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AlpacaProfile from "./components/AlpacaProfile";
 import ButtonList from "./components/ButtonList";
 
@@ -82,8 +82,6 @@ const App = () => {
     setParts((prev) => ({ ...prev, [accessoryName]: styleName }));
   }, [styleName]);
 
-  console.log(styleName);
-
   let styleData = [];
   let accessoryData = [];
 
@@ -95,7 +93,18 @@ const App = () => {
     return null;
   });
 
-  console.log(styleData, accessoryData);
+  const random = () => {
+    setParts({
+      Hair: data[0].items[Math.floor(Math.random() * 7)],
+      Leg: data[5].items[Math.floor(Math.random() * 6)],
+      Neck: data[4].items[Math.floor(Math.random() * 4)],
+      Mouth: data[3].items[Math.floor(Math.random() * 5)],
+      Background: data[7].items[Math.floor(Math.random() * 17)],
+      Accessories: data[6].items[Math.floor(Math.random() * 4)],
+      Eyes: data[2].items[Math.floor(Math.random() * 6)],
+      Ears: data[1].items[Math.floor(Math.random() * 3)],
+    });
+  };
 
   const download = () => {
     const element = document.getElementById("Alpaca__img");
@@ -121,7 +130,9 @@ const App = () => {
             </div>
           </div>
           <div className="btn-container">
-            <button className="btn-a">Random</button>
+            <button className="btn-a" onClick={random}>
+              Random
+            </button>
             <button className="btn-a" onClick={download}>
               Download
             </button>
