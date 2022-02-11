@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import AlpacaProfile from "./components/AlpacaProfile";
 import ButtonList from "./components/ButtonList";
 
 const data = [
@@ -64,6 +65,24 @@ const data = [
 
 const App = () => {
   const [accessoryName, setAccessoryName] = useState("Eyes");
+  const [styleName, setStyleName] = useState("default");
+
+  const [parts, setParts] = useState({
+    Hair: "default",
+    Leg: "default",
+    Neck: "default",
+    Mouth: "default",
+    Background: "darkblue50",
+    Accessories: "headphone",
+    Eyes: "default",
+    Ears: "default",
+  });
+
+  useEffect(() => {
+    setParts((prev) => ({ ...prev, [accessoryName]: styleName }));
+  }, [styleName]);
+
+  console.log(styleName);
 
   let styleData = [];
   let accessoryData = [];
@@ -80,12 +99,24 @@ const App = () => {
 
   return (
     <div>
-      <ButtonList
-        setAccessoryName={setAccessoryName}
-        names={"ACCESSORIZE THE ALPACA'S"}
-        data={accessoryData}
-      />
-      <ButtonList names={"Style"} data={styleData} />
+      <h1>ALPACA GENERATOR</h1>
+      <div className="cont">
+        <div>
+          <AlpacaProfile parts={parts} />
+        </div>
+        <div>
+          <ButtonList
+            selected={setAccessoryName}
+            names={"ACCESSORIZE THE ALPACA'S"}
+            data={accessoryData}
+          />
+          <ButtonList
+            selected={setStyleName}
+            names={"Style"}
+            data={styleData}
+          />
+        </div>
+      </div>
     </div>
   );
 };

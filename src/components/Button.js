@@ -1,9 +1,9 @@
 import React from "react";
 import "./Button.css";
 
-const Button = ({ name, setAccessoryName }) => {
+const Button = ({ name, selected }) => {
   return (
-    <button onClick={(e) => setAccessoryName(name)} className="btn">
+    <button onClick={(e) => selected(name)} className="btn">
       {name}
     </button>
   );

@@ -1,0 +1,49 @@
+.Alpaca__img {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.eyes,
+.hair,
+.ears,
+.background,
+.neck,
+.leg,
+.accessories,
+.mouth,
+.nose {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+
+.background {
+  z-index: -1;
+}
+.ears {
+  z-index: 2;
+}
+
+.hair {
+  z-index: 3;
+}
+.eyes {
+  z-index: 4;
+}
+.nose {
+  z-index: 5;
+}
+.mouth {
+  z-index: 6;
+}
+.accessories {
+}
+.leg {
+  z-index: 8;
+}
+
+.cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
