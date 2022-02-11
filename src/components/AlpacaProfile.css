@@ -45,5 +45,21 @@
 
 .cont {
   display: grid;
+  max-width: 1000px;
   grid-template-columns: repeat(2, 1fr);
+  margin: auto;
+  min-width: 850px;
+}
+
+.btn-container {
+  position: absolute;
+  margin-top: 425px;
+}
+.btn-a {
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  margin: 30px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 2px 1px black;
 }

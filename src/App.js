@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { toPng } from "html-to-image";
+import React, { useEffect, useRef, useState } from "react";
 import AlpacaProfile from "./components/AlpacaProfile";
 import ButtonList from "./components/ButtonList";
 
@@ -66,7 +67,6 @@ const data = [
 const App = () => {
   const [accessoryName, setAccessoryName] = useState("Eyes");
   const [styleName, setStyleName] = useState("default");
-
   const [parts, setParts] = useState({
     Hair: "default",
     Leg: "default",
@@ -97,12 +97,35 @@ const App = () => {
 
   console.log(styleData, accessoryData);
 
+  const download = () => {
+    const element = document.getElementById("Alpaca__img");
+    console.log(element);
+    toPng(element).then((dataUrl) => {
+      console.log(dataUrl);
+      const link = document.createElement("a");
+      link.download = "alpaca.jpeg";
+      link.href = dataUrl;
+      link.click();
+      link.remove();
+    });
+  };
+
   return (
     <div>
       <h1>ALPACA GENERATOR</h1>
       <div className="cont">
         <div>
-          <AlpacaProfile parts={parts} />
+          <div id="Alpaca__img">
+            <div>
+              <AlpacaProfile parts={parts} />
+            </div>
+          </div>
+          <div className="btn-container">
+            <button className="btn-a">Random</button>
+            <button className="btn-a" onClick={download}>
+              Download
+            </button>
+          </div>
         </div>
         <div>
           <ButtonList
