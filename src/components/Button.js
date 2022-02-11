@@ -1,8 +1,12 @@
 import React from "react";
 import "./Button.css";
 
-const Button = (props) => {
-  return <div className="btn">Hair</div>;
+const Button = ({ name, setAccessoryName }) => {
+  return (
+    <button onClick={(e) => setAccessoryName(name)} className="btn">
+      {name}
+    </button>
+  );
 };
 
 export default Button;

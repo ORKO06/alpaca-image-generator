@@ -1,0 +1,11 @@
+.list {
+  min-width: 200px;
+  margin-bottom: 40px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+  margin: 10px 10px;
+}
