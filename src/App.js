@@ -1,4 +1,4 @@
-import { toPng } from "html-to-image";
+import { toPng } from "dom-to-image";
 import React, { useEffect, useState } from "react";
 import AlpacaProfile from "./components/AlpacaProfile";
 import ButtonList from "./components/ButtonList";
