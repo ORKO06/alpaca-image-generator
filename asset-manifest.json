@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/alpaca-image-generator/static/css/main.4fd752c5.css",
-    "main.js": "/alpaca-image-generator/static/js/main.6c77dabc.js",
+    "main.js": "/alpaca-image-generator/static/js/main.f63ecbd6.js",
     "index.html": "/alpaca-image-generator/index.html",
     "main.4fd752c5.css.map": "/alpaca-image-generator/static/css/main.4fd752c5.css.map",
-    "main.6c77dabc.js.map": "/alpaca-image-generator/static/js/main.6c77dabc.js.map"
+    "main.f63ecbd6.js.map": "/alpaca-image-generator/static/js/main.f63ecbd6.js.map"
   },
   "entrypoints": [
     "static/css/main.4fd752c5.css",
-    "static/js/main.6c77dabc.js"
+    "static/js/main.f63ecbd6.js"
   ]
 }
