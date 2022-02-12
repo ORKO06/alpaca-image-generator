@@ -2,7 +2,6 @@ import React from "react";
 import "./AlpacaProfile.css";
 
 const AlpacaProfile = ({ parts }) => {
-  console.log(parts.Background);
   return (
     <div className="Alpaca__img">
       <img

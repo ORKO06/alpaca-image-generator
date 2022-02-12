@@ -108,9 +108,7 @@ const App = () => {
 
   const download = () => {
     const element = document.getElementById("Alpaca__img");
-    console.log(element);
     toPng(element).then((dataUrl) => {
-      console.log(dataUrl);
       const link = document.createElement("a");
       link.download = "alpaca.jpeg";
       link.href = dataUrl;
